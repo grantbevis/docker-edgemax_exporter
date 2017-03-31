@@ -1,0 +1,10 @@
+version: "2"
+services:
+  edgemax_exporter:
+    image: b3vis/edgemax_exporter
+    restart: always
+    container_name: edgemax_exporter
+    environment:
+      - ARGUMENTS="-edgemax.addr https://10.0.0.1 -edgemax.username admin -edgemax.password password -edgemax.insecure"
+    ports:
+      - "9135:9135"
