@@ -4,18 +4,17 @@ Containerised version of [edgemax_exporter](https://github.com/mdlayher/edgemax_
 
 edgemax_exporter is a metrics exporter for [Prometheus](https://prometheus.io/)
 
-Make sure you set the APCUPSDADDR variable with the details to access your APCUPSD instance
-
 ---
-#### 0.0.1 (2017-03-31)
+#### 0.0.2 (2017-12-13)
 
-Initial release
+- Initial release
+- Dramatically reduced image size
 
 ---
 #### Example Run Command
 
 ```
-docker run -d -p 9162:9162 -e ARGUMENTS="-edgemax.addr https://10.0.0.1 -edgemax.username admin -edgemax.password password -edgemax.insecure" b3vis/edgemax_exporter
+docker run -d -p 9132:9132 -e ARGUMENTS="-edgemax.addr https://10.0.0.1 -edgemax.username admin -edgemax.password password -edgemax.insecure" b3vis/edgemax_exporter
 ```
 
 #### Docker Compose Example
@@ -29,7 +28,7 @@ services:
     environment:
       - ARGUMENTS="-edgemax.addr https://10.0.0.1 -edgemax.username admin -edgemax.password password -edgemax.insecure"
     ports:
-      - "9135:9135"
+      - "9132:9132"
 
 ```
 ---
